@@ -1,0 +1,18 @@
+[
+  {
+    "name": "complete-synthetic-package",
+    "files": [
+      { "path": "SKILL.md", "content": "---\nname: incident-summary\ndescription: Summarize a synthetic incident using the supplied template.\n---\n\nRead [template](templates/summary.md).\n" },
+      { "path": "templates/summary.md", "content": "# Summary\n\nEvidence:\nOpen questions:\n" },
+      { "path": "LICENSE", "content": "Synthetic fixture license notice.\n" }
+    ],
+    "expectedCodes": []
+  },
+  {
+    "name": "incomplete-package-needs-review",
+    "files": [
+      { "path": "SKILL.md", "content": "---\nname: Bad_Name\ndescription: Inspect a synthetic example.\n---\n\nRead [missing](missing.md).\n[escape](../outside.md)\n" }
+    ],
+    "expectedCodes": ["NAME_INVALID", "REFERENCE_MISSING", "REFERENCE_ESCAPE", "LICENSE_NOT_INCLUDED"]
+  }
+]
