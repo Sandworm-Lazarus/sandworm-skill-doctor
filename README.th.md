@@ -8,6 +8,18 @@
 
 ใช้ธีมดำอมฟ้า–แดงคอรัลจาก [เว็บ Sandworm Lazarus](https://sandworm-lazarus.pages.dev/) ฟอนต์ไทยและอังกฤษอยู่ในโปรเจกต์ พร้อมภาพเครือข่ายที่สร้างขึ้นใหม่
 
+## ใช้ผ่าน CLI
+
+ใช้ engine เดียวกับหน้าเว็บในสคริปต์หรือ CI ต้องมี Node.js 20 ขึ้นไป ไม่ต้องติดตั้ง dependency
+
+```sh
+node cli/skill-doctor.cjs check ./path/to/skill --json
+node cli/skill-doctor.cjs snapshot ./path/to/skill --output ./baseline.json
+node cli/skill-doctor.cjs compare ./baseline.json ./current.json --json
+```
+
+[คำสั่ง exit code และขอบเขตไฟล์](docs/CLI.th.md) · [English](docs/CLI.md) การรัน native checks ของ feature นี้บน hosted runner ยังรอตรวจสอบ รายงาน validation เดิมไม่ได้รับรอง CLI ใหม่
+
 ## เปิดใช้งาน
 
 ```sh

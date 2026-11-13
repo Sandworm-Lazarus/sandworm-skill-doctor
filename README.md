@@ -2,11 +2,23 @@
 
 ![Skill Doctor — Sandworm theme](docs/cover.svg)
 
-Inspect a skill package before installing it: review basic metadata, selected-file references, license-file presence, and exact UTF-8 content changes through SHA-256 snapshots. Everything runs in the browser; skills and links are never executed or fetched.
+Inspect a skill package before installing it: review basic metadata, selected-file references, license-file presence, and exact UTF-8 content changes through SHA-256 snapshots. The web workflow runs in the browser; an optional Node CLI uses the same engine. Skills and links are never executed or fetched.
 
 **v0.1.0 · Original Sandworm implementation · [ภาษาไทย](README.th.md)**
 
 The dark navy/coral interface follows [Sandworm Lazarus](https://sandworm-lazarus.pages.dev/) with self-hosted Thai/Latin fonts, an original network illustration, responsive panels, and keyboard navigation.
+
+## Node CLI
+
+Use the same inspection/snapshot engine in local scripts or CI. Node.js 20+; no dependencies.
+
+```sh
+node cli/skill-doctor.cjs check ./path/to/skill --json
+node cli/skill-doctor.cjs snapshot ./path/to/skill --output ./baseline.json
+node cli/skill-doctor.cjs compare ./baseline.json ./current.json --json
+```
+
+[CLI commands, exit codes and filesystem boundaries](docs/CLI.md) · [คู่มือภาษาไทย](docs/CLI.th.md). Hosted native checks for this feature are pending execution; older validation reports do not certify the new CLI.
 
 ## Run
 
